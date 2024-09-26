@@ -12,7 +12,7 @@ import { TopComponent } from './Hauptbody/top/top.component';
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
-    TopComponent,
+    TopComponent
 
   ],
   templateUrl: './app.component.html',
