@@ -1,0 +1,65 @@
+.main {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid #0000000c;
+  background-color: #686565;
+  display: flex;
+  justify-content: center;  // Hauptcontainer zentrieren
+  align-items: center;
+  height: 8%;  // Damit der Footer den gesamten Bildschirm ausfüllt
+}
+
+.footer {
+  width: 100%;  // Die gesamte Breite ausnutzen
+  display: flex;
+  justify-content: center;  // Icons horizontal zentrieren
+  align-items: center;  // Icons vertikal zentrieren
+  padding: 20px 0;  // Abstand zum Rand
+  background-color: #a19c9c;
+}
+
+.social-area {
+  display: flex;
+  justify-content: center;  // Icons zentrieren
+}
+
+.social {
+  display: flex;
+  gap: 20px;  // Abstand zwischen den Icons
+  align-items: center;
+
+  a {
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 24px;
+        height: 24px;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    .social {
+      bottom: 58px;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .main {
+    .social {
+      justify-content: center;
+    }
+  }
+}

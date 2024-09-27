@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { TopComponent } from './Hauptbody/top/top.component';
+import { UebermichComponent } from './Hauptbody/uebermich/uebermich.component';
 
 
 @Component({
@@ -12,7 +13,8 @@ import { TopComponent } from './Hauptbody/top/top.component';
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
-    TopComponent
+    TopComponent,
+    UebermichComponent
 
   ],
   templateUrl: './app.component.html',
