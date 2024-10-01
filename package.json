@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href /Portfolio-Page_RW/",
+    "build": "ng build --base-href /portfolio-page_RW/ && npm run postbuild",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:Frontend": "node dist/frontend/server/server.mjs",
-    "Postbuild": "move docs\\docs\\browser\\* docs && rmdir /s /q docs\\browser"
-  },
+    "postbuild": "move docs\\browser\\* docs && rmdir /s /q docs\\browser"
+  }
+  ,
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.5",
