@@ -3,8 +3,9 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 @Component({
   selector: 'app-uebermich',
   standalone: true,
+  imports: [],
   templateUrl: './uebermich.component.html',
-  styleUrls: ['./uebermich.component.scss']
+  styleUrl: './uebermich.component.scss'
 })
 export class UebermichComponent implements OnInit {
 
@@ -15,8 +16,6 @@ export class UebermichComponent implements OnInit {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
-        } else {
-          entry.target.classList.remove('in-view');
         }
       });
     });

@@ -4,36 +4,32 @@
     padding: 0px 20px;
   }
 
-  /* Zentrierte Überschrift */
-  .title,
-  .line,
-  .content-text,
-  .experience-projects,
-  .skill,
-  .btn-area-cv {
+  /* Standardzustand für alle slide-in-elemente: Unsichtbar */
+  .slide-in-element {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(100%); /* Von rechts */
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   }
 
+  /* Sichtbar, sobald in Sichtweite */
   .in-view {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0); /* Bewegt sich in Position */
   }
 
   .line {
     height: 4px;
-    background-color: #000;
+    background-color: black; /* Sichtbare Farbe */
     width: 80%;
     margin: 0 auto;
-    transition-delay: 0.3s;
+    transition-delay: 0.3s; /* Verzögerung, bis die Linie sichtbar wird */
   }
 
   .title {
     line-height: 1.2;
     font-size: 3rem;
     text-align: center;
-    transition-delay: 0.1s;
+    transition-delay: 0.1s; /* Verzögerung für den Titel */
   }
 
   .tb-height--20 {
@@ -60,7 +56,7 @@
     transition-delay: 0.9s;
   }
 
-  /* Zentrierung und Abstand der Projekte */
+  /* Projekte */
   .experience-projects {
     display: flex;
     justify-content: center;
@@ -69,7 +65,6 @@
     transition-delay: 1.2s;
   }
 
-  /* Projekte mit etwas kleinerer Schrift und mehr Abstand */
   .experience-projects .project-block h2 {
     font-size: 1.7rem;
     margin-bottom: 12px;
@@ -78,94 +73,5 @@
   .experience-projects .project-block h4 {
     font-size: 1.1rem;
     margin-top: 4px;
-  }
-
-  .skill {
-    border-radius: 50rem;
-    padding: 12px 16px;
-    font-size: 1rem;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: all 0.8s ease-out;
-  }
-
-  /* Skills mit Verzögerungen */
-  .skill:nth-child(1) {
-    transition-delay: 1.5s;
-  }
-
-  .skill:nth-child(2) {
-    transition-delay: 1.7s;
-  }
-
-  .skill:nth-child(3) {
-    transition-delay: 1.9s;
-  }
-
-  .btn-area-cv {
-    position: relative;
-    margin-top: 24px;
-    transition-delay: 2.2s;
-  }
-
-  &.xs {
-    .image-container {
-      margin: 20px;
-    }
-
-    .image-area {
-      width: 100%;
-      padding: unset;
-
-      .image {
-        width: 100%;
-      }
-    }
-  }
-}
-
-/* Media Queries für kleinere Bildschirme */
-@media (max-width: 768px) {
-  .main {
-    .title {
-      font-size: 2.5rem;
-    }
-
-    .content-text {
-      max-width: 80%;
-      font-size: 1rem;
-    }
-
-    .experience-projects {
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .skills-section {
-      gap: 8px;
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .main {
-    .title {
-      font-size: 2rem;
-    }
-
-    .content-text {
-      max-width: 100%;
-      font-size: 0.9rem;
-    }
-
-    .experience-projects {
-      gap: 10px;
-    }
-
-    .skills-section {
-      gap: 4px;
-    }
   }
 }
