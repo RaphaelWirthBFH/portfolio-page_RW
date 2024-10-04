@@ -1,85 +1,171 @@
 .main {
-    .container {
-      box-sizing: border-box;
-      padding: 0px 20px;
-    }
-  
-    .line {
-      height: 2px;
-    }
-  
-    .title {
-      line-height: 0.7;
-    }
-  
+  .container {
+    box-sizing: border-box;
+    padding: 0px 20px;
+  }
+
+  /* Zentrierte Überschrift */
+  .title,
+  .line,
+  .content-text,
+  .experience-projects,
+  .skill,
+  .btn-area-cv {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  }
+
+  .in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .line {
+    height: 4px;
+    background-color: #000;
+    width: 80%;
+    margin: 0 auto;
+    transition-delay: 0.3s;
+  }
+
+  .title {
+    line-height: 1.2;
+    font-size: 3rem;
+    text-align: center;
+    transition-delay: 0.1s;
+  }
+
+  .tb-height--20 {
+    margin-bottom: 40px;
+  }
+
+  .content-text {
+    max-width: 50%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  /* Textblöcke mit Verzögerung */
+  .content-text:nth-child(1) {
+    transition-delay: 0.5s;
+  }
+
+  .content-text:nth-child(2) {
+    transition-delay: 0.7s;
+  }
+
+  .content-text:nth-child(3) {
+    transition-delay: 0.9s;
+  }
+
+  /* Zentrierung und Abstand der Projekte */
+  .experience-projects {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    transition-delay: 1.2s;
+  }
+
+  /* Projekte mit etwas kleinerer Schrift und mehr Abstand */
+  .experience-projects .project-block h2 {
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+  }
+
+  .experience-projects .project-block h4 {
+    font-size: 1.1rem;
+    margin-top: 4px;
+  }
+
+  .skill {
+    border-radius: 50rem;
+    padding: 12px 16px;
+    font-size: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.8s ease-out;
+  }
+
+  /* Skills mit Verzögerungen */
+  .skill:nth-child(1) {
+    transition-delay: 1.5s;
+  }
+
+  .skill:nth-child(2) {
+    transition-delay: 1.7s;
+  }
+
+  .skill:nth-child(3) {
+    transition-delay: 1.9s;
+  }
+
+  .btn-area-cv {
+    position: relative;
+    margin-top: 24px;
+    transition-delay: 2.2s;
+  }
+
+  &.xs {
     .image-container {
-      flex-direction: column;
-      box-sizing: border-box;
-      display: flex;
-      place-content: stretch center;
-      align-items: stretch;
-      flex: 0 0 auto;
+      margin: 20px;
     }
-  
+
     .image-area {
-      position: relative;
-      height: 100%;
-      min-width: 200px;
-      display: flex;
-      padding: 20px 56px;
-      justify-content: center;
-      align-items: center;
-  
+      width: 100%;
+      padding: unset;
+
       .image {
-        z-index: 1;
-        max-height: 100%;
-        object-fit: contain;
-        max-width: 100%;
-        max-height: 350px;
-        min-height: 100px;
-      }
-    }
-  
-    .skill {
-      border-radius: 50rem;
-      padding: 12px 16px;
-    }
-  
-    .btn-area-cv {
-      position: relative;
-  
-      > * {
-        z-index: 2;
-      }
-  
-      &::after {
-        position: absolute;
         width: 100%;
-        height: 100%;
-        top: 4px;
-        left: 4px;
-        border: solid 1px #000000;
-        border-radius: 4px;
-        content: "";
-      }
-    }
-  
-    .unlink {
-      text-decoration: unset;
-    }
-  
-    &.xs {
-      .image-container {
-        margin: 20px;
-      }
-      .image-area {
-        width: 100%;
-        padding: unset;
-  
-        .image {
-          width: 100%;
-        }
       }
     }
   }
-  
+}
+
+/* Media Queries für kleinere Bildschirme */
+@media (max-width: 768px) {
+  .main {
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .content-text {
+      max-width: 80%;
+      font-size: 1rem;
+    }
+
+    .experience-projects {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .skills-section {
+      gap: 8px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    .title {
+      font-size: 2rem;
+    }
+
+    .content-text {
+      max-width: 100%;
+      font-size: 0.9rem;
+    }
+
+    .experience-projects {
+      gap: 10px;
+    }
+
+    .skills-section {
+      gap: 4px;
+    }
+  }
+}
