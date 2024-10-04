@@ -1,0 +1,10 @@
+main > * {
+    height: 100vh; /* Jeder Abschnitt nimmt die volle Höhe des Bildschirms ein */
+    scroll-snap-align: start; /* Die Abschnitte schnappen an den Startpunkt */
+  }
+  
+  main {
+    scroll-snap-type: y mandatory; /* Scrollt vertikal und snappt zu den Abschnitten */
+    overflow-y: scroll; /* Aktiviert das Scrollen im vertikalen Bereich */
+  }
+  
