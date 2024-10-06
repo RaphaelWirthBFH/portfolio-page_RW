@@ -1,10 +1,14 @@
-main > * {
-    height: 100vh; /* Jeder Abschnitt nimmt die volle Höhe des Bildschirms ein */
-    scroll-snap-align: start; /* Die Abschnitte schnappen an den Startpunkt */
-  }
-  
-  main {
-    scroll-snap-type: y mandatory; /* Scrollt vertikal und snappt zu den Abschnitten */
-    overflow-y: scroll; /* Aktiviert das Scrollen im vertikalen Bereich */
-  }
-  
+.scroll-container {
+  scroll-snap-type: y mandatory; /* Scroll-Snapping auf den Haupt-Container anwenden */
+  height: 100vh;
+  overflow-y: scroll; /* Ermöglicht das Scrollen im Container */
+}
+
+section {
+  height: 100vh; /* Jede Sektion nimmt die gesamte Höhe des Viewports ein */
+  scroll-snap-align: start; /* Sektionen werden an der Oberkante des Containers ausgerichtet */
+  display: flex; /* Flexbox verwenden, um Inhalte zu zentrieren */
+  justify-content: center; /* Horizontal zentrieren */
+  align-items: center; /* Vertikal zentrieren */
+  text-align: center; /* Optional: Text zentrieren */
+}

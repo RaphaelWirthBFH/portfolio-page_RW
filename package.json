@@ -9,8 +9,7 @@
     "test": "ng test",
     "serve:ssr:Frontend": "node dist/frontend/server/server.mjs",
     "postbuild": "move docs\\browser\\* docs && rmdir /s /q docs\\browser"
-  }
-  ,
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.5",
@@ -26,6 +25,9 @@
     "@angular/ssr": "^18.2.5"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^18.2.5"
+    "@angular-devkit/build-angular": "^18.2.5",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
   }
 }
