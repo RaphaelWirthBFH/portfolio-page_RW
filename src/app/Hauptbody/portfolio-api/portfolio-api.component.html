@@ -1,66 +1,37 @@
 <div class="main tb-position--relative" ngClass.xs="xs" ngClass.sm="sm">
-    <div class="tb-container tb-position--relative container">
-      <div fxLayout="column" fxLayoutAlign="start stretch">
+  <div class="tb-container tb-position--relative container">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      
+      <!-- Zentrierter Titel -->
+      <div class="slide-in-element" fxLayout="row" fxLayoutAlign="center center">
+        <h2 class="title current-typo--h4">Portfolio</h2>
+      </div>
+
+      <!-- Zentrierte Linie -->
+      <div class="slide-in-element" fxLayout="row" fxLayoutAlign="center center">
+        <div class="line tb-color-bg--black"></div>
+      </div>
+
+      <div class="tb-height--20"></div>
+
+      <!-- 3 Quadratische Boxen nebeneinander -->
+      <div class="grid-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
         
-        <!-- Titel und Linie -->
-        <div fxLayout="row" fxLayoutAlign="center center">
-          <h2 class="title slide-in-element">Über mich</h2>
-        </div>
-  
-        <div fxLayout="row" fxLayoutAlign="center center">
-          <div class="line slide-in-element"></div>
-        </div>
-  
-        <div class="tb-height--20"></div>
-  
-        <!-- Textinhalte, die von links einfliegen -->
-        <div fxLayout="row" fxLayout.xs="column">
-          <div fxFlex fxLayout="column">
-            <div class="tb-height--64"></div>
-  
-            <div class="slide-in-element content-text">
-              <p class="current-typo--body1-medium tb-color--black-54">
-                Bereits während meiner Schulzeit interessierte ich mich für Informatik. Besonders für die Entwicklung von 
-                <span class="tb-color--black">Games</span>. Später während meiner KV-Lehre entwickelte ich ein besonderes Interesse an der 
-                <span class="tb-color--black">Datenanalyse</span>.
-              </p>
-            </div>
-            <div class="tb-height--12"></div>
-  
-            <div class="slide-in-element content-text">
-              <p class="current-typo--body1-medium tb-color--black-54">
-                Durch Zufall entdeckte ich den Bereich Business Intelligence. Seit einem Jahr arbeite ich als Entwickler bei Prodega. 
-                Zuvor war ich als Datenmanager bei Interdiscount tätig.
-              </p>
-            </div>
-            <div class="tb-height--12"></div>
-  
-            <div class="slide-in-element content-text">
-              <p class="current-typo--body1-medium tb-color--black-54">
-                Mein Ziel ist es, in die Richtung Data Science zu gehen.
-              </p>
-            </div>
-  
-            <div class="tb-height--56"></div>
-  
-            <!-- Zentrierte Projekte mit Abstand -->
-            <div class="experience-projects slide-in-element">
-              <div class="project-block">
-                <h2 class="title current-typo--h3-light">04+</h2>
-                <h4 class="title current-typo--h6">Jahre Erfahrung</h4>
-              </div>
-  
-              <div class="project-block">
-                <h2 class="title current-typo--h3-light">10+</h2>
-                <h4 class="title current-typo--h6">Abgeschlossene Projekte</h4>
-              </div>
-            </div>
-  
-            <div class="tb-height--56"></div>
-  
+        <!-- Linker Container für Aare-Daten -->
+        <div class="grid-item">
+          <div *ngIf="aareData; else loading">
+            <h3 class="location">{{ aareData.name }}</h3>
+            <p class="temperature">{{ aareData.aare }}°C</p>
           </div>
-        </div> 
+          <ng-template #loading>
+            <p>Daten werden geladen...</p>
+          </ng-template>
+        </div>
+
+        <!-- Platzhalter-Container -->
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
       </div>
     </div>
   </div>
-  
+</div>

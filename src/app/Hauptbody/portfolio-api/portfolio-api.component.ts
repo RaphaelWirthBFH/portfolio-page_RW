@@ -1,18 +1,34 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { AareApiService } from '../../services/aare-api.service';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';  // Importiere HttpClientModule
 
 @Component({
   selector: 'app-portfolio-api',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, HttpClientModule],  // Füge HttpClientModule hier hinzu
   templateUrl: './portfolio-api.component.html',
-  styleUrl: './portfolio-api.component.scss'
+  styleUrls: ['./portfolio-api.component.scss'],
 })
-export class PortfolioApiComponent {
-  constructor(private el: ElementRef) {}
+export class PortfolioApiComponent implements OnInit {
+  aareData: any;
+
+  constructor(private el: ElementRef, private aareApiService: AareApiService) {}
 
   ngOnInit(): void {
+    // API-Daten laden
+    this.aareApiService.getAareData('bern').subscribe(
+      (data) => {
+        this.aareData = data;
+      },
+      (error) => {
+        console.error('Fehler beim Laden der Aare-Daten:', error);
+      }
+    );
+
+    // Intersection Observer für Slide-in-Animation
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('in-view');
         }

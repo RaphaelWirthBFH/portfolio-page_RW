@@ -6,6 +6,7 @@ import { TopComponent } from './Hauptbody/top/top.component';
 import { UebermichComponent } from './Hauptbody/uebermich/uebermich.component';
 import { PortfolioApiComponent } from './Hauptbody/portfolio-api/portfolio-api.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -15,7 +16,8 @@ import { PortfolioApiComponent } from './Hauptbody/portfolio-api/portfolio-api.c
     FooterComponent,
     TopComponent,
     UebermichComponent,
-    PortfolioApiComponent
+    PortfolioApiComponent,
+
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
