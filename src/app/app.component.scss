@@ -1,14 +1,14 @@
 .scroll-container {
-  scroll-snap-type: y mandatory; /* Scroll-Snapping auf den Haupt-Container anwenden */
+  scroll-snap-type: y mandatory; 
   height: 100vh;
-  overflow-y: scroll; /* Ermöglicht das Scrollen im Container */
+  overflow-y: scroll; 
 }
 
 section {
-  height: 100vh; /* Jede Sektion nimmt die gesamte Höhe des Viewports ein */
-  scroll-snap-align: start; /* Sektionen werden an der Oberkante des Containers ausgerichtet */
-  display: flex; /* Flexbox verwenden, um Inhalte zu zentrieren */
-  justify-content: center; /* Horizontal zentrieren */
-  align-items: center; /* Vertikal zentrieren */
-  text-align: center; /* Optional: Text zentrieren */
+  height: 100vh; 
+  scroll-snap-align: start; 
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  text-align: center; 
 }
