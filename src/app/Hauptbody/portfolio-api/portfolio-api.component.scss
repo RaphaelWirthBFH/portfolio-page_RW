@@ -7,14 +7,14 @@
   /* Slide-in Animation */
   .slide-in-element {
     opacity: 0;
-    transform: translateY(100%); /* Von unten einfliegen */
+    transform: translateY(100%);
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   }
 
   /* Sichtbar, sobald in Sichtweite */
   .in-view {
     opacity: 1;
-    transform: translateY(0); /* Bewegt sich in Position */
+    transform: translateY(0);
   }
 
   .line {
@@ -43,7 +43,7 @@
     flex-wrap: wrap;
   }
 
-  /* Animation für die Container */
+  /* Animation und Stil für die Container */
   .grid-item {
     width: 200px;
     height: 200px;
@@ -63,6 +63,14 @@
     &.in-view {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    .grid-title {
+      font-size: 1.5rem; /* Größere Schrift */
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+      text-decoration: underline; /* Unterstrichen */
     }
 
     .location {

@@ -19,8 +19,9 @@
         
         <!-- Linker Container für Aare-Daten -->
         <div class="grid-item">
+          <h3 class="grid-title">Aare Guru API</h3>
           <div *ngIf="aareData; else loading">
-            <h3 class="location">{{ aareData.name }}</h3>
+            <p class="location">{{ aareData.name }}</p>
             <p class="temperature">{{ aareData.aare }}°C</p>
           </div>
           <ng-template #loading>
@@ -28,9 +29,17 @@
           </ng-template>
         </div>
 
-        <!-- Platzhalter-Container -->
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
+        <!-- Zweiter Container -->
+        <div class="grid-item">
+          <h3 class="grid-title">API Nummer 2</h3>
+          <!-- Weitere API-Daten können hier später hinzugefügt werden -->
+        </div>
+
+        <!-- Dritter Container -->
+        <div class="grid-item">
+          <h3 class="grid-title">API Nummer 3</h3>
+          <!-- Weitere API-Daten können hier später hinzugefügt werden -->
+        </div>
       </div>
     </div>
   </div>
