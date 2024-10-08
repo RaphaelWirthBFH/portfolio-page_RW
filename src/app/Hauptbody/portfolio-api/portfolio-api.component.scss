@@ -4,15 +4,17 @@
     padding: 0px 20px;
   }
 
+  /* Slide-in Animation */
   .slide-in-element {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateY(100%); /* Von unten einfliegen */
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   }
 
+  /* Sichtbar, sobald in Sichtweite */
   .in-view {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0); /* Bewegt sich in Position */
   }
 
   .line {
@@ -41,6 +43,7 @@
     flex-wrap: wrap;
   }
 
+  /* Animation für die Container */
   .grid-item {
     width: 200px;
     height: 200px;
@@ -53,6 +56,14 @@
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+
+    &.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     .location {
       font-size: 1.2rem;

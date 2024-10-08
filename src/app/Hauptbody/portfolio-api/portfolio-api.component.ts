@@ -1,12 +1,12 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { AareApiService } from '../../services/aare-api.service';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';  // Importiere HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-portfolio-api',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],  // Füge HttpClientModule hier hinzu
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './portfolio-api.component.html',
   styleUrls: ['./portfolio-api.component.scss'],
 })
@@ -26,7 +26,7 @@ export class PortfolioApiComponent implements OnInit {
       }
     );
 
-    // Intersection Observer für Slide-in-Animation
+    // Intersection Observer für Slide-in-Animation von Titel, Linie und Containern
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -35,7 +35,7 @@ export class PortfolioApiComponent implements OnInit {
       });
     });
 
-    const elements = this.el.nativeElement.querySelectorAll('.slide-in-element');
+    const elements = this.el.nativeElement.querySelectorAll('.slide-in-element, .grid-item');
     elements.forEach((el: Element) => observer.observe(el));
   }
 }
