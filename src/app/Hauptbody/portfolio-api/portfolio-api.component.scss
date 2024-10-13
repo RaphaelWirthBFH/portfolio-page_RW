@@ -4,26 +4,31 @@
     padding: 0px 20px;
   }
 
-  /* Slide-in Animation */
   .slide-in-element {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateX(-100%); /* Startposition links außerhalb des Bildes */
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   }
-
-  /* Sichtbar, sobald in Sichtweite */
+  
   .in-view {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0); /* Zielposition, also zentriert */
   }
 
+  .tb-container {
+    width: 100vw;
+    padding: 0; /* entfernt zusätzliche Abstände */
+  }
+  
   .line {
     height: 4px;
     background-color: black;
-    width: 50%;
-    margin: 0 auto;
-    transition-delay: 0.3s;
+    width: 80%;  /* Nutze 80% statt 100% */
+    max-width: none;  /* Entferne eventuelle Begrenzungen */
+    margin: 0 auto;  /* Zentriert die Linie */
   }
+  
+  
 
   .title {
     line-height: 1.2;
