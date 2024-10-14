@@ -1,42 +1,105 @@
 .main {
-    .container {
-      box-sizing: border-box;
-      padding: 0px 20px;
-    }
-  
-    .slide-in-element {
-      opacity: 0;
-      transform: translateX(-100%); /* Startposition links außerhalb des Bildes */
-      transition: transform 0.8s ease-out, opacity 0.8s ease-out;
-    }
-    
-    .in-view {
-      opacity: 1;
-      transform: translateX(0); /* Zielposition, also zentriert */
-    }
-  
-    .tb-container {
-      width: 100vw;
-      padding: 0; /* entfernt zusätzliche Abstände */
-    }
-    
-    .line {
-      height: 4px;
-      background-color: black;
-      width: 80%;  /* Nutze 80% statt 100% */
-      max-width: none;  /* Entferne eventuelle Begrenzungen */
-      margin: 0 auto;  /* Zentriert die Linie */
-    }
-  
-    .title {
-      line-height: 1.2;
-      font-size: 3rem;
-      text-align: center;
-      transition-delay: 0.1s;
-    }
-  
-    .tb-height--20 {
-      margin-bottom: 40px;
-    }
+  .container {
+    box-sizing: border-box;
+    padding: 0px 20px;
+  }
+
+  .slide-in-element {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   }
   
+  .in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .line {
+    height: 4px;
+    background-color: black;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .title {
+    line-height: 1.2;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .tb-height--20 {
+    margin-bottom: 40px;
+  }
+
+  .timeline-container {
+    overflow-x: scroll;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+
+  .timeline {
+    display: flex;
+    gap: 50px;
+  }
+
+  .timeline-event {
+    min-width: 200px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f0f8ff;
+      transform: scale(1.05);
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .scroll-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+  }
+
+  button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    
+    &:hover {
+      background-color: #555;
+    }
+  }
+
+  /* Stil für die Detailansicht */
+  .event-details {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #eee;
+    border-radius: 8px;
+    text-align: center;
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+  }
+}

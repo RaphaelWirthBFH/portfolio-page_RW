@@ -14,8 +14,32 @@
 
       <div class="tb-height--20"></div>
 
-      
-      
+      <!-- Scroll-Buttons -->
+      <div class="scroll-buttons">
+        <button (click)="scrollTimeline(-200)">◀</button>
+        <button (click)="scrollTimeline(200)">▶</button>
+      </div>
+
+      <!-- Horizontal scrollbarer Zeitstrahl -->
+      <div class="timeline-container">
+        <div class="timeline">
+          <div 
+            *ngFor="let event of events" 
+            class="timeline-event" 
+            (mouseenter)="onHover(event)"
+            (mouseleave)="onHover(null)"
+            (click)="toggleDetails(event)"
+          >
+            {{ event.year }}: {{ event.title }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailansicht unterhalb des gewählten Ereignisses -->
+      <div class="event-details" *ngIf="selectedEvent">
+        <h3>{{ selectedEvent.year }} - {{ selectedEvent.title }}</h3>
+        <p>{{ selectedEvent.details }}</p>
+      </div>
     </div>
   </div>
 </div>
