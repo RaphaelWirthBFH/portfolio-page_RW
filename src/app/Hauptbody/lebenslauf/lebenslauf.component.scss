@@ -1,0 +1,42 @@
+.main {
+    .container {
+      box-sizing: border-box;
+      padding: 0px 20px;
+    }
+  
+    .slide-in-element {
+      opacity: 0;
+      transform: translateX(-100%); /* Startposition links außerhalb des Bildes */
+      transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    }
+    
+    .in-view {
+      opacity: 1;
+      transform: translateX(0); /* Zielposition, also zentriert */
+    }
+  
+    .tb-container {
+      width: 100vw;
+      padding: 0; /* entfernt zusätzliche Abstände */
+    }
+    
+    .line {
+      height: 4px;
+      background-color: black;
+      width: 80%;  /* Nutze 80% statt 100% */
+      max-width: none;  /* Entferne eventuelle Begrenzungen */
+      margin: 0 auto;  /* Zentriert die Linie */
+    }
+  
+    .title {
+      line-height: 1.2;
+      font-size: 3rem;
+      text-align: center;
+      transition-delay: 0.1s;
+    }
+  
+    .tb-height--20 {
+      margin-bottom: 40px;
+    }
+  }
+  
