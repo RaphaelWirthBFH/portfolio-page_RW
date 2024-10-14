@@ -102,4 +102,46 @@
       color: #555;
     }
   }
+
+  /* Responsive Anpassung für kleinere Bildschirme */
+  @media (max-width: 1024px) {
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .timeline-event {
+      min-width: 150px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2rem;
+    }
+
+    .timeline-container {
+      padding: 10px;
+    }
+
+    .timeline-event {
+      min-width: 120px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .line {
+      width: 90%;
+    }
+
+    .title {
+      font-size: 1.8rem;
+    }
+
+    .timeline-event {
+      min-width: 100px;
+      padding: 8px;
+      font-size: 0.8rem;
+    }
+  }
 }

@@ -93,6 +93,9 @@
       flex-direction: column; /* Spaltenlayout für kleinere Bildschirme */
       gap: 20px;
     }
+    .line {
+      width: 80vw; /* Sicherstellen, dass die Linie immer 80% der Ansicht einnimmt */
+    }
   }
 
   @media (max-width: 768px) {
@@ -108,11 +111,14 @@
     .experience-projects {
       gap: 10px; /* Weniger Abstand zwischen den Projekten */
     }
+    .line {
+      width: 80vw; /* Sicherstellen, dass die Linie immer 80% der Ansicht einnimmt */
+    }
   }
 
   @media (max-width: 480px) {
     .line {
-      width: 90%; /* Linie wird etwas größer auf sehr kleinen Bildschirmen */
+      width: 80%; /* Linie wird etwas größer auf sehr kleinen Bildschirmen */
     }
 
     .experience-projects {
