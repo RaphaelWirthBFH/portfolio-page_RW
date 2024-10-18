@@ -6,13 +6,13 @@
 
   .slide-in-element {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateY(100%); /* Von unten nach oben */
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   }
   
   .in-view {
     opacity: 1;
-    transform: translateX(0); 
+    transform: translateY(0); /* Bewegt sich nach oben */
   }
 
   .line {
@@ -23,12 +23,10 @@
     z-index: 1;
   }
   
-  
   .tb-container {
     width: 100vw;
-    padding: 0; /* entfernt zusätzliche Abstände */
+    padding: 0;
   }
-  
 
   .title {
     line-height: 1.2;
@@ -48,7 +46,6 @@
     flex-wrap: wrap;
   }
 
-  /* Animation und Stil für die Container */
   .grid-item {
     width: 200px;
     height: 200px;
@@ -62,20 +59,20 @@
     padding: 10px;
     box-sizing: border-box;
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(100%); /* Von unten nach oben */
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
 
     &.in-view {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0); /* Bewegt sich nach oben */
     }
 
     .grid-title {
-      font-size: 1.5rem; /* Größere Schrift */
+      font-size: 1.5rem;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: center;
-      text-decoration: underline; /* Unterstrichen */
+      text-decoration: underline;
     }
 
     .location {
@@ -91,20 +88,17 @@
     }
   }
 
-
-
   @media (max-width: 1024px) {
-      .title {
-        font-size: 2.5rem;
-      }
-  
-      .timeline-event {
-        min-width: 150px;
-        font-size: 0.9rem;
-      }
+    .title {
+      font-size: 2.5rem;
     }
 
-  /* Responsive Anpassung für kleinere Bildschirme */
+    .timeline-event {
+      min-width: 150px;
+      font-size: 0.9rem;
+    }
+  }
+
   @media (max-width: 768px) {
     .grid-item {
       width: 150px;

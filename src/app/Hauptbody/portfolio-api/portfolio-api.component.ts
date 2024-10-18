@@ -1,12 +1,12 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { AareApiService } from '../../services/aare-api.service';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-portfolio-api',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './portfolio-api.component.html',
   styleUrls: ['./portfolio-api.component.scss'],
 })
@@ -35,7 +35,8 @@ export class PortfolioApiComponent implements OnInit {
       });
     });
 
-    const elements = this.el.nativeElement.querySelectorAll('.slide-in-element, .grid-item');
-    elements.forEach((el: Element) => observer.observe(el));
+    const elements = this.el.nativeElement.querySelectorAll('.slide-in-element, .grid-item'); 
+    elements.forEach((el: Element) => observer.observe(el)); 
+    
   }
 }
