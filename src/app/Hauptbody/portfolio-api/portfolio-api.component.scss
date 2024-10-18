@@ -6,28 +6,28 @@
 
   .slide-in-element {
     opacity: 0;
-    transform: translateX(-100%); /* Startposition links außerhalb des Bildes */
+    transform: translateX(-100%);
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   }
   
   .in-view {
     opacity: 1;
-    transform: translateX(0); /* Zielposition, also zentriert */
+    transform: translateX(0); 
   }
 
+  .line {
+    height: 4px;
+    background-color: black;
+    width: 80%;
+    margin: 0 auto;
+    z-index: 1;
+  }
+  
+  
   .tb-container {
     width: 100vw;
     padding: 0; /* entfernt zusätzliche Abstände */
   }
-  
-  .line {
-    height: 4px;
-    background-color: black;
-    width: 80%;  /* Nutze 80% statt 100% */
-    max-width: none;  /* Entferne eventuelle Begrenzungen */
-    margin: 0 auto;  /* Zentriert die Linie */
-  }
-  
   
 
   .title {
@@ -90,6 +90,19 @@
       color: black;
     }
   }
+
+
+
+  @media (max-width: 1024px) {
+      .title {
+        font-size: 2.5rem;
+      }
+  
+      .timeline-event {
+        min-width: 150px;
+        font-size: 0.9rem;
+      }
+    }
 
   /* Responsive Anpassung für kleinere Bildschirme */
   @media (max-width: 768px) {

@@ -41,7 +41,7 @@ export class LebenslaufComponent implements OnInit {
     });
 
     const elements = this.el.nativeElement.querySelectorAll('.slide-in-element, .timeline-event');
-    elements.forEach((el: Element) => observer.observe(el));
+    elements.forEach((el: Element) => observer.observe(el));//test
   }
 
   scrollTimeline(distance: number) {
