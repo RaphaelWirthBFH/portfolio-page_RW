@@ -18,8 +18,11 @@
     .line {
       height: 4px;
       background-color: black;
-      width: 80%;
-      margin: 0 auto;
+      width: 60vw; /* Breite der Linie auf 60% des Ansichtsfensters setzen */
+      position: absolute; /* Absolute Positionierung */
+      left: 50%; /* Startpunkt auf der horizontalen Mitte */
+      transform: translateX(-50%); /* Verschiebt die Linie um 50% ihrer Breite zurück, um sie zu zentrieren */
+      
     }
   
     .title {
@@ -59,4 +62,10 @@
   
     }
   }
+  
+
+
+  
+  
+
   
