@@ -6,6 +6,7 @@ import { TopComponent } from './Hauptbody/top/top.component';
 import { UebermichComponent } from './Hauptbody/uebermich/uebermich.component';
 import { PortfolioApiComponent } from './Hauptbody/portfolio-api/portfolio-api.component';
 import { LebenslaufComponent } from "./Hauptbody/lebenslauf/lebenslauf.component";
+import { kontaktComponent } from './Hauptbody/kontakt/kontakt.component';
 
 
 @Component({
@@ -18,7 +19,8 @@ import { LebenslaufComponent } from "./Hauptbody/lebenslauf/lebenslauf.component
     TopComponent,
     UebermichComponent,
     PortfolioApiComponent,
-    LebenslaufComponent
+    LebenslaufComponent,
+    kontaktComponent
 ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

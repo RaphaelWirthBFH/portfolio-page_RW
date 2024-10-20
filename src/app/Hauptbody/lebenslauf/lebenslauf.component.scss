@@ -6,13 +6,13 @@
 
   .slide-in-element {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: translateY(100%); /* Ändere es zu translateY für Vertikales Einfliegen */
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   }
-  
+
   .in-view {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   .line {
@@ -32,13 +32,17 @@
     margin-bottom: 40px;
   }
 
+  /* Timeline-Container */
   .timeline-container {
     overflow-x: scroll;
     white-space: nowrap;
     display: flex;
+    justify-content: center; /* Zentriert die Timeline */
     align-items: center;
     padding: 20px;
     background-color: #f9f9f9;
+    max-width: 80%;
+    margin: 0 auto; /* Zentriert den Container */
   }
 
   .timeline {
@@ -80,7 +84,7 @@
     font-size: 1.2rem;
     border-radius: 4px;
     transition: background-color 0.3s;
-    
+
     &:hover {
       background-color: #555;
     }
@@ -93,10 +97,12 @@
     background-color: #eee;
     border-radius: 8px;
     text-align: center;
+
     h3 {
       font-size: 1.5rem;
       margin-bottom: 10px;
     }
+
     p {
       font-size: 1.1rem;
       color: #555;

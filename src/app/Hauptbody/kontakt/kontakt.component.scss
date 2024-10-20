@@ -1,0 +1,62 @@
+.main {
+    .container {
+      box-sizing: border-box;
+      padding: 0px 20px;
+    }
+  
+    .slide-in-element {
+      opacity: 0;
+      transform: translateY(100%); /* Ändere es zu translateY für Vertikales Einfliegen */
+      transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+    }
+  
+    .in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    .line {
+      height: 4px;
+      background-color: black;
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    .title {
+      line-height: 1.2;
+      font-size: 3rem;
+      text-align: center;
+    }
+  
+    .tb-height--20 {
+      margin-bottom: 40px;
+    }
+  
+   
+  
+    /* Responsive Anpassung für kleinere Bildschirme */
+    @media (max-width: 1024px) {
+      .title {
+        font-size: 2.5rem;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .title {
+        font-size: 2rem;
+      }
+  
+    }
+  
+    @media (max-width: 480px) {
+      .line {
+        width: 90%;
+      }
+  
+      .title {
+        font-size: 1.8rem;
+      }
+  
+    }
+  }
+  
