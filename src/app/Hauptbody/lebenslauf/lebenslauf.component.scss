@@ -6,7 +6,7 @@
 
   .slide-in-element {
     opacity: 0;
-    transform: translateY(100%); /* Ändere es zu translateY für Vertikales Einfliegen */
+    transform: translateY(100%);
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   }
 
@@ -18,11 +18,10 @@
   .line {
     height: 4px;
     background-color: black;
-    width: 60vw; /* Breite der Linie auf 60% des Ansichtsfensters setzen */
-    position: absolute; /* Absolute Positionierung */
-    left: 50%; /* Startpunkt auf der horizontalen Mitte */
-    transform: translateX(-50%); /* Verschiebt die Linie um 50% ihrer Breite zurück, um sie zu zentrieren */
-    
+    width: 60vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .title {
@@ -40,12 +39,12 @@
     overflow-x: scroll;
     white-space: nowrap;
     display: flex;
-    justify-content: center; /* Zentriert die Timeline */
+    justify-content: start;
     align-items: center;
     padding: 20px;
     background-color: #f9f9f9;
     max-width: 80%;
-    margin: 0 auto; /* Zentriert den Container */
+    margin: 0 auto;
   }
 
   .timeline {
@@ -55,6 +54,7 @@
 
   .timeline-event {
     min-width: 200px;
+    max-width: 80%; /* Maximal 80% der Breite */
     padding: 10px;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -62,11 +62,34 @@
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     cursor: pointer;
+    word-wrap: break-word; /* Langer Text wird umgebrochen */
 
     &:hover {
       background-color: #f0f8ff;
       transform: scale(1.05);
       box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Stil für die Detailansicht */
+    .event-details {
+      margin-top: 10px;
+      padding: 15px;
+      background-color: #eee;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+      max-width: 80%; /* Maximal 80% der Breite */
+      word-wrap: break-word; /* Langer Text wird umgebrochen */
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: #555;
+      }
     }
   }
 
@@ -93,54 +116,31 @@
     }
   }
 
-  /* Stil für die Detailansicht */
-  .event-details {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #eee;
-    border-radius: 8px;
-    text-align: center;
-
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #555;
-    }
-  }
-
-  /* Responsive Anpassung für kleinere Bildschirme */
-  @media (max-width: 1024px) {
-    .title {
-      font-size: 2.5rem;
-    }
-
-    .timeline-event {
-      min-width: 150px;
-      font-size: 0.9rem;
-    }
-  }
-
+  /* Responsive Anpassung für kleine Bildschirme */
   @media (max-width: 768px) {
-    .title {
-      font-size: 2rem;
-    }
-
     .timeline-container {
       padding: 10px;
+      overflow: hidden;
+    }
+
+    .timeline {
+      flex-direction: column;
+      gap: 20px;
     }
 
     .timeline-event {
-      min-width: 120px;
+      min-width: 100%;
+      max-width: 100%; /* Maximal 100% für kleine Bildschirme */
+    }
+
+    .event-details {
+      max-width: 100%; /* Infobox auf 100% bei kleineren Bildschirmen */
     }
   }
 
   @media (max-width: 480px) {
     .line {
-      width: 90%;
+      width: 90vw;
     }
 
     .title {
@@ -148,9 +148,27 @@
     }
 
     .timeline-event {
-      min-width: 100px;
+      max-width: 80%;
+      min-width: 80%;
       padding: 8px;
       font-size: 0.8rem;
+    }
+
+    .timeline-container {
+
+      max-width: 80%;
+
+    }
+
+    /* Weitere Verkleinerung der Schrift für sehr kleine Bildschirme */
+    .event-details {
+      h3 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
     }
   }
 }

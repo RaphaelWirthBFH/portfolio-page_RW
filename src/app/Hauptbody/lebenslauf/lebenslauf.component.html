@@ -14,7 +14,7 @@
 
       <div class="tb-height--20"></div>
 
-      <!-- Scroll-Buttons -->
+      <!-- Scroll-Buttons (sichtbar auf großen Bildschirmen) -->
       <div class="scroll-buttons">
         <button (click)="scrollTimeline(-200)">◀</button>
         <button (click)="scrollTimeline(200)">▶</button>
@@ -31,12 +31,18 @@
             (click)="toggleDetails(event)"
           >
             {{ event.year }}: {{ event.title }}
+
+            <!-- Detailansicht direkt unter dem jeweiligen Ereignis für kleine Bildschirme -->
+            <div *ngIf="selectedEvent === event && isSmallScreen" class="event-details">
+              <h3>{{ event.year }} - {{ event.title }}</h3>
+              <p>{{ event.details }}</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Detailansicht unterhalb des gewählten Ereignisses -->
-      <div class="event-details" *ngIf="selectedEvent">
+      <!-- Detailansicht unterhalb des gesamten Zeitstrahls auf großen Bildschirmen -->
+      <div *ngIf="selectedEvent && !isSmallScreen" class="event-details">
         <h3>{{ selectedEvent.year }} - {{ selectedEvent.title }}</h3>
         <p>{{ selectedEvent.details }}</p>
       </div>
