@@ -4,7 +4,7 @@
       
       <!-- Zentrierter Titel -->
       <div class="slide-in-element" fxLayout="row" fxLayoutAlign="center center">
-        <h2 class="title current-typo--h4">Portfolio</h2>
+        <h2 class="title current-typo--h4">API's</h2>
       </div>
 
       <!-- Zentrierte Linie -->
@@ -17,30 +17,48 @@
       <!-- 3 Quadratische Boxen nebeneinander -->
       <div class="grid-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
         
-        <!-- Linker Container für Aare-Daten -->
-        <div class="grid-item">
-          <h3 class="grid-title">Aare Guru API</h3>
-          <div *ngIf="aareData; else loading">
-            <p class="location">{{ aareData.name }}</p>
-            <p class="temperature">{{ aareData.aare }}°C</p>
-          </div>
-          <ng-template #loading>
-            <p>Daten werden geladen...</p>
-          </ng-template>
+      <!-- Aare Guru API -->
+      <div class="grid-item">
+        <h3 class="grid-title">Aare Guru API</h3>
+        <div *ngIf="aareData; else loadingAare">
+          <p class="location">{{ aareData.name }}</p>
+          <p class="temperature">{{ aareData.aare }}°C</p>
         </div>
+        <ng-template #loadingAare>
+          <p>Daten werden geladen...</p>
+        </ng-template>
+      </div>
 
-        <!-- Zweiter Container -->
-        <div class="grid-item">
-          <h3 class="grid-title">API Nummer 2</h3>
-          <!-- Weitere API-Daten können hier später hinzugefügt werden -->
-        </div>
+  <!-- Dad Jokes API -->
+  <div class="grid-item">
+    <h3 class="grid-title">Dad Joke</h3>
+    <div *ngIf="dadJoke; else loadingJoke">
+      <p class="joke">{{ dadJoke }}</p>
+    </div>
+    <ng-template #loadingJoke>
+      <p>Witz wird geladen...</p>
+    </ng-template>
+    <button class="joke-button" (click)="loadNewJoke()">Neuer Witz</button>
+  </div>
 
-        <!-- Dritter Container -->
-        <div class="grid-item">
-          <h3 class="grid-title">API Nummer 3</h3>
-          <!-- Weitere API-Daten können hier später hinzugefügt werden -->
+  <!-- Country Info API -->
+  <div class="grid-item">
+    <h3 class="grid-title">Standortbasiertes Land</h3>
+    <div *ngIf="countryInfo; else loadingCountry">
+      <p><strong>Land:</strong> {{ countryInfo.name.common }}</p>
+      <p><strong>Hauptstadt:</strong> {{ countryInfo.capital[0] }}</p>
+      <p><strong>Region:</strong> {{ countryInfo.region }}</p>
+      <p><strong>Bevölkerung:</strong> {{ countryInfo.population | number }}</p>
+      <img [src]="countryInfo.flags.svg" alt="Flagge" class="flag">
+    </div>
+    <ng-template #loadingCountry>
+      <p>{{ errorMessage ? errorMessage : 'Länderinformationen werden geladen...' }}</p>
+    </ng-template>
+  </div>
+  
+</div>
+
         </div>
       </div>
     </div>
-  </div>
-</div>
+

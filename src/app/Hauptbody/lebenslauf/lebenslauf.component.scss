@@ -6,9 +6,9 @@
 }
 
 .tb-container {
-  width: 80%; /* Hauptcontainer auf 80% begrenzen */
-  max-width: 1200px; /* Maximale Breite */
-  margin: 0 auto; /* Zentrieren */
+  width: 80%; 
+  max-width: 1200px;
+  margin: 0 auto; 
   padding: 0;
   box-sizing: border-box;
 }
@@ -18,6 +18,7 @@
   transform: translateY(100%);
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   text-align: center;
+
 }
 
 .in-view {
@@ -49,14 +50,16 @@
 }
 
 .timeline-iframe {
-  width: 100%; /* Füllt die Breite des Containers */
-  max-width: 100%; /* Keine Einschränkung innerhalb des Containers */
-  height: 500px;
+  width: 100%;
+  max-width: 100%;
+  height: 50vh; /* 80% der Bildschirmhöhe */
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
+
 
 
 /* Responsive Anpassung für kleine Bildschirme */
@@ -65,8 +68,11 @@
     width: 100%; /* Volle Breite auf kleineren Bildschirmen */
   }
 
+  .title {
+    font-size: 2rem;
+  }
   .timeline-iframe {
-    height: 400px; /* Reduzierte Höhe für kleine Bildschirme */
+    height: 70vh; /* 60% der Bildschirmhöhe auf sehr kleinen Bildschirmen */
   }
 }
 
@@ -80,6 +86,6 @@
   }
 
   .timeline-iframe {
-    height: 350px; /* Noch kompakter auf sehr kleinen Bildschirmen */
+    height: 70vh; /* 60% der Bildschirmhöhe auf sehr kleinen Bildschirmen */
   }
 }

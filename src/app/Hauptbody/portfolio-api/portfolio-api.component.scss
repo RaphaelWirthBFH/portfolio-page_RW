@@ -6,13 +6,13 @@
 
   .slide-in-element {
     opacity: 0;
-    transform: translateY(100%); /* Von unten nach oben */
+    transform: translateY(100%);
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
   }
-  
+
   .in-view {
     opacity: 1;
-    transform: translateY(0); /* Bewegt sich nach oben */
+    transform: translateY(0);
   }
 
   .line {
@@ -22,9 +22,9 @@
     margin: 0 auto;
     z-index: 1;
   }
-  
+
   .tb-container {
-    width: 100vw;
+    width: 100%;
     padding: 0;
   }
 
@@ -32,7 +32,6 @@
     line-height: 1.2;
     font-size: 3rem;
     text-align: center;
-    transition-delay: 0.1s;
   }
 
   .tb-height--20 {
@@ -48,61 +47,75 @@
 
   .grid-item {
     width: 200px;
-    height: 200px;
+    height: auto;
+    max-width: 30%;
     background-color: #f0f0f0;
     border: 2px solid black;
-    max-width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; /* Inhalte zentrieren */
     padding: 10px;
     box-sizing: border-box;
-    opacity: 0;
-    transform: translateY(100%); /* Von unten nach oben */
+    border-radius: 8px;
+    text-align: center;
     transition: transform 0.8s ease-out, opacity 0.8s ease-out;
 
     &.in-view {
       opacity: 1;
-      transform: translateY(0); /* Bewegt sich nach oben */
+      transform: translateY(0);
     }
 
     .grid-title {
       font-size: 1.5rem;
       font-weight: bold;
       margin-bottom: 10px;
-      text-align: center;
       text-decoration: underline;
     }
 
-    .location {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 10px;
+    .location,
+    .temperature,
+    .joke,
+    .country-info {
+      font-size: 1rem;
+      margin: 5px 0;
     }
 
-    .temperature {
-      font-size: 2rem;
-      font-weight: bold;
-      color: black;
+    .joke-button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #0a0b0c;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    
+      &:hover {
+        background-color: #76787a;
+      }
+    }
+
+    img {
+      max-width: 80%; /* Standard: Flagge wird auf 80% der Box skaliert */
+      max-height: 100px; /* Begrenzung der Höhe auf maximal 100px */
+      height: auto; /* Verhältnis beibehalten */
+      margin: 10px auto; /* Zentrierung */
+      display: block;
     }
   }
 
-  @media (max-width: 1024px) {
-    .title {
-      font-size: 2.5rem;
-    }
-
-    .timeline-event {
-      min-width: 150px;
-      font-size: 0.9rem;
-    }
-  }
-
+  /* Responsive Anpassungen */
   @media (max-width: 768px) {
     .grid-item {
-      width: 150px;
-      height: 150px;
+      width: 100%;
+      max-width: 100%;
+      padding: 10px;
+    }
+
+    .title {
+      font-size: 2rem;
     }
 
     .grid-title {
@@ -110,15 +123,34 @@
     }
 
     .location,
-    .temperature {
-      font-size: 1rem;
+    .temperature,
+    .joke,
+    .country-info {
+      font-size: 0.9rem;
+    }
+
+    button {
+      font-size: 0.8rem;
+    }
+
+    img {
+      max-width: 60%; /* Reduzierte Breite */
+      max-height: 80px; /* Reduzierte maximale Höhe */
     }
   }
 
   @media (max-width: 480px) {
-    .grid-item {
-      width: 120px;
-      height: 120px;
+    .line {
+      width: 90%;
+    }
+
+    .container {
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+    
+    .title {
+      font-size: 1.8rem;
     }
 
     .grid-title {
@@ -126,8 +158,20 @@
     }
 
     .location,
-    .temperature {
-      font-size: 0.9rem;
+    .temperature,
+    .joke,
+    .country-info {
+      font-size: 0.8rem;
+    }
+
+    button {
+      font-size: 0.7rem;
+    }
+
+    img {
+      max-width: 50%; /* Noch kleinere Breite */
+      max-height: 60px; /* Maximale Höhe noch kleiner */
+      height: auto; /* Verhältnis beibehalten */
     }
   }
 }

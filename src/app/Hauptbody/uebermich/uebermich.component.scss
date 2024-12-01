@@ -80,9 +80,6 @@
 
   /* Media Queries für kleinere Bildschirme */
   @media (max-width: 1024px) {
-    .title {
-      font-size: 2.5rem; /* Kleinere Schriftgröße auf Tablets */
-    }
 
     .content-text {
       max-width: 80%; /* Mehr Breite für den Text */
