@@ -62,7 +62,7 @@ export class LebenslaufComponent implements OnInit {
   }
 
   onHover(event: TimelineEvent | null) {
-    // Hier könnte später zusätzlicher Hover-Code eingefügt werden, falls benötigt.
+
   }
 
   toggleDetails(event: TimelineEvent) {
