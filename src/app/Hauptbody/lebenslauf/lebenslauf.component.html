@@ -1,51 +1,27 @@
-<div class="main tb-position--relative" ngClass.xs="xs" ngClass.sm="sm">
-  <div class="tb-container tb-position--relative container">
-    <div fxLayout="column" fxLayoutAlign="center center">
-      
-      <!-- Zentrierter Titel -->
-      <div class="slide-in-element" fxLayout="row" fxLayoutAlign="center center">
-        <h2 class="title current-typo--h4">Lebenslauf</h2>
-      </div>
+<div class="main tb-position--relative">
+  <div class="tb-container">
 
-      <!-- Zentrierte Linie -->
-      <div class="slide-in-element" fxLayout="row" fxLayoutAlign="center center">
-        <div class="line tb-color-bg--black"></div>
-      </div>
-
-      <div class="tb-height--20"></div>
-
-      <!-- Scroll-Buttons (sichtbar auf großen Bildschirmen) -->
-      <div class="scroll-buttons">
-        <button (click)="scrollTimeline(-200)">◀</button>
-        <button (click)="scrollTimeline(200)">▶</button>
-      </div>
-
-      <!-- Horizontal scrollbarer Zeitstrahl -->
-      <div class="timeline-container">
-        <div class="timeline">
-          <div 
-            *ngFor="let event of events" 
-            class="timeline-event" 
-            (mouseenter)="onHover(event)"
-            (mouseleave)="onHover(null)"
-            (click)="toggleDetails(event)"
-          >
-            {{ event.year }}: {{ event.title }}
-
-            <!-- Detailansicht direkt unter dem jeweiligen Ereignis für kleine Bildschirme -->
-            <div *ngIf="selectedEvent === event && isSmallScreen" class="event-details">
-              <h3>{{ event.year }} - {{ event.title }}</h3>
-              <p>{{ event.details }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Detailansicht unterhalb des gesamten Zeitstrahls auf großen Bildschirmen -->
-      <div *ngIf="selectedEvent && !isSmallScreen" class="event-details">
-        <h3>{{ selectedEvent.year }} - {{ selectedEvent.title }}</h3>
-        <p>{{ selectedEvent.details }}</p>
-      </div>
+    <!-- Zentrierter Titel -->
+    <div class="slide-in-element">
+      <h2 class="title">Lebenslauf</h2>
     </div>
+
+    <!-- Zentrierte Linie -->
+    <div class="slide-in-element">
+      <div class="line"></div>
+    </div>
+
+    <div class="tb-height--20"></div>
+
+    <!-- Zeitstrahl-Container -->
+    <div class="slide-in-element timeline-container">
+      <iframe 
+        src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1pUmC0MRBS_7MCRsTRkrA0H4eFyRoCF_fzvdl7PteBMU&font=Default&lang=de&initial_zoom=2&height=100%" 
+        class="timeline-iframe" 
+        allowfullscreen 
+        frameborder="0">
+      </iframe>
+    </div>
+
   </div>
 </div>
