@@ -4,7 +4,7 @@
       
       <!-- Zentrierter Titel -->
       <div class="slide-in-element" fxLayout="row" fxLayoutAlign="center center">
-        <h2 class="title current-typo--h4">API's</h2>
+        <h2 class="title current-typo--h4">Hobby</h2>
       </div>
 
       <!-- Zentrierte Linie -->
@@ -19,7 +19,7 @@
         
       <!-- Aare Guru API -->
       <div class="grid-item">
-        <h3 class="grid-title">Aare Guru API</h3>
+        <h3 class="grid-title">Schwimmen</h3>
         <div *ngIf="aareData; else loadingAare">
           <p class="location">{{ aareData.name }}</p>
           <p class="temperature">{{ aareData.aare }}°C</p>
@@ -31,7 +31,7 @@
 
   <!-- Dad Jokes API -->
   <div class="grid-item">
-    <h3 class="grid-title">Dad Joke</h3>
+    <h3 class="grid-title">Dad Jokes erzählen</h3>
     <div *ngIf="dadJoke; else loadingJoke">
       <p class="joke">{{ dadJoke }}</p>
     </div>
@@ -43,7 +43,7 @@
 
   <!-- Country Info API -->
   <div class="grid-item">
-    <h3 class="grid-title">Standortbasiertes Land</h3>
+    <h3 class="grid-title">Reisen</h3>
     <div *ngIf="countryInfo; else loadingCountry">
       <p><strong>Land:</strong> {{ countryInfo.name.common }}</p>
       <p><strong>Hauptstadt:</strong> {{ countryInfo.capital[0] }}</p>
