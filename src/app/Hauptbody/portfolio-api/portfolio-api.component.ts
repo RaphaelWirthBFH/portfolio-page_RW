@@ -43,20 +43,24 @@ export class PortfolioApiComponent implements OnInit {
     // Standortbasierte Länderinformationen
     this.loadCountryInfoBasedOnLocation();
 
-    // Intersection Observer für Animationen
+    // IntersectionObserver für Animationen
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
+          const element = entry.target as HTMLElement;
+          const animationClass = element.getAttribute('data-animation');
+          if (animationClass) {
+            element.classList.add('animate__animated', animationClass);
+          }
+          observer.unobserve(entry.target); // Beobachtung stoppen
         }
       });
     });
 
-    const elements = this.el.nativeElement.querySelectorAll('.slide-in-element, .grid-item');
+    const elements = this.el.nativeElement.querySelectorAll('.slide-in-element');
     elements.forEach((el: Element) => observer.observe(el));
   }
 
-  // Methode für neuen Witz
   loadNewJoke(): void {
     this.dadJokeApiService.getRandomJoke().subscribe(
       (data) => {
@@ -68,7 +72,6 @@ export class PortfolioApiComponent implements OnInit {
     );
   }
 
-  // Methode für standortbasiertes Land
   loadCountryInfoBasedOnLocation(): void {
     this.geoLocationService.getCurrentPosition().then(
       (position) => {
@@ -90,7 +93,6 @@ export class PortfolioApiComponent implements OnInit {
     );
   }
 
-  // Methode für Länderinformationen
   loadCountryInfo(country: string): void {
     this.countryInfoApiService.getCountryInfo(country).subscribe(
       (data) => {

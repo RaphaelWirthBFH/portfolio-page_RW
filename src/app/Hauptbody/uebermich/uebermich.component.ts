@@ -15,19 +15,20 @@ export class UebermichComponent implements OnInit {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate__animated'); // Basisklasse von Animate.css
-  
-          if (entry.target.classList.contains('line-container')) {
-            entry.target.classList.add('animate__fadeInLeft'); // Animation für die Linie
-          } else if (entry.target.classList.contains('content-text')) {
-            entry.target.classList.add('animate__fadeInUp'); // Animation für den Text
+          const target = entry.target as HTMLElement;
+          target.classList.add('animate__animated');
+
+          if (target.classList.contains('line-container')) {
+            target.classList.add('animate__fadeInLeft'); // Linie fliegt von links
+          } else if (target.classList.contains('content-text')) {
+            target.classList.add('animate__fadeInRight'); // Text fliegt von unten
           } else {
-            entry.target.classList.add('animate__fadeInLeft'); // Animation für den Titel
+            target.classList.add('animate__fadeInRight'); // Titel fliegt von rechts
           }
         }
       });
     });
-  
+
     const elements = this.el.nativeElement.querySelectorAll('.slide-in-element');
     elements.forEach((el: Element) => observer.observe(el));
   }

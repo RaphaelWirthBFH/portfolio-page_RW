@@ -1,14 +1,14 @@
 <div class="main tb-position--relative" ngClass.xs="xs" ngClass.sm="sm">
   <div class="tb-container tb-position--relative container">
     <div fxLayout="column" fxLayoutAlign="center center">
-      
+
       <!-- Zentrierter Titel -->
-      <div class="slide-in-element" fxLayout="row" fxLayoutAlign="center center">
+      <div class="slide-in-element animate__animated" data-animation="animate__fadeInDown" fxLayout="row" fxLayoutAlign="center center">
         <h2 class="title current-typo--h4">Hobby</h2>
       </div>
 
       <!-- Zentrierte Linie -->
-      <div class="slide-in-element" fxLayout="row" fxLayoutAlign="center center">
+      <div class="slide-in-element animate__animated" data-animation="animate__fadeInLeft" fxLayout="row" fxLayoutAlign="center center">
         <div class="line tb-color-bg--black"></div>
       </div>
 
@@ -16,49 +16,46 @@
 
       <!-- 3 Quadratische Boxen nebeneinander -->
       <div class="grid-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
-        
-      <!-- Aare Guru API -->
-      <div class="grid-item">
-        <h3 class="grid-title">Schwimmen</h3>
-        <div *ngIf="aareData; else loadingAare">
-          <p class="location">{{ aareData.name }}</p>
-          <p class="temperature">{{ aareData.aare }}°C</p>
+        <!-- Linker Container -->
+        <div class="grid-item slide-in-element" data-animation="animate__fadeInLeft">
+          <h3 class="grid-title">Schwimmen</h3>
+          <div *ngIf="aareData; else loadingAare">
+            <p class="location">{{ aareData.name }}</p>
+            <p class="temperature">{{ aareData.aare }}°C</p>
+          </div>
+          <ng-template #loadingAare>
+            <p>Daten werden geladen...</p>
+          </ng-template>
         </div>
-        <ng-template #loadingAare>
-          <p>Daten werden geladen...</p>
-        </ng-template>
+
+        <!-- Mittlerer Container -->
+        <div class="grid-item slide-in-element" data-animation="animate__fadeInUp">
+          <h3 class="grid-title">Dad Jokes erzählen</h3>
+          <div *ngIf="dadJoke; else loadingJoke">
+            <p class="joke">{{ dadJoke }}</p>
+          </div>
+          <ng-template #loadingJoke>
+            <p>Witz wird geladen...</p>
+          </ng-template>
+          <button class="joke-button" (click)="loadNewJoke()">Neuer Witz</button>
+        </div>
+
+        <!-- Rechter Container -->
+        <div class="grid-item slide-in-element" data-animation="animate__fadeInRight">
+          <h3 class="grid-title">Reisen</h3>
+          <div *ngIf="countryInfo; else loadingCountry">
+            <p><strong>Land:</strong> {{ countryInfo.name.common }}</p>
+            <p><strong>Hauptstadt:</strong> {{ countryInfo.capital[0] }}</p>
+            <p><strong>Region:</strong> {{ countryInfo.region }}</p>
+            <p><strong>Bevölkerung:</strong> {{ countryInfo.population | number }}</p>
+            <img [src]="countryInfo.flags.svg" alt="Flagge" class="flag">
+          </div>
+          <ng-template #loadingCountry>
+            <p>{{ errorMessage ? errorMessage : 'Länderinformationen werden geladen...' }}</p>
+          </ng-template>
+        </div>
       </div>
 
-  <!-- Dad Jokes API -->
-  <div class="grid-item">
-    <h3 class="grid-title">Dad Jokes erzählen</h3>
-    <div *ngIf="dadJoke; else loadingJoke">
-      <p class="joke">{{ dadJoke }}</p>
     </div>
-    <ng-template #loadingJoke>
-      <p>Witz wird geladen...</p>
-    </ng-template>
-    <button class="joke-button" (click)="loadNewJoke()">Neuer Witz</button>
   </div>
-
-  <!-- Country Info API -->
-  <div class="grid-item">
-    <h3 class="grid-title">Reisen</h3>
-    <div *ngIf="countryInfo; else loadingCountry">
-      <p><strong>Land:</strong> {{ countryInfo.name.common }}</p>
-      <p><strong>Hauptstadt:</strong> {{ countryInfo.capital[0] }}</p>
-      <p><strong>Region:</strong> {{ countryInfo.region }}</p>
-      <p><strong>Bevölkerung:</strong> {{ countryInfo.population | number }}</p>
-      <img [src]="countryInfo.flags.svg" alt="Flagge" class="flag">
-    </div>
-    <ng-template #loadingCountry>
-      <p>{{ errorMessage ? errorMessage : 'Länderinformationen werden geladen...' }}</p>
-    </ng-template>
-  </div>
-  
 </div>
-
-        </div>
-      </div>
-    </div>
-
