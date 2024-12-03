@@ -1,15 +1,14 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 @Component({
   selector: 'kontakt',
   standalone: true,
-  imports: [CommonModule], // CommonModule hier explizit hinzufügen
+  imports: [CommonModule],
   templateUrl: './kontakt.component.html',
   styleUrls: ['./kontakt.component.scss']
 })
-export class kontaktComponent implements OnInit {
+export class KontaktComponent implements OnInit {
 
   constructor(private el: ElementRef) {}
 
@@ -17,14 +16,15 @@ export class kontaktComponent implements OnInit {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
+          const element = entry.target as HTMLElement;
+          const animation = element.getAttribute('data-animation') || 'animate__fadeIn';
+          element.classList.add('animate__animated', animation);
+          observer.unobserve(entry.target);
         }
       });
     });
 
-    const elements = this.el.nativeElement.querySelectorAll('.slide-in-element, .timeline-event');
-    elements.forEach((el: Element) => observer.observe(el));//test
+    const elements = this.el.nativeElement.querySelectorAll('.slide-in-element');
+    elements.forEach((el: Element) => observer.observe(el));
   }
-
-
 }
