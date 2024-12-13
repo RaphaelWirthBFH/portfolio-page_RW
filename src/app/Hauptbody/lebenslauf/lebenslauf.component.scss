@@ -1,8 +1,17 @@
 .main {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 0;
+  .container {
+    box-sizing: border-box;
+    padding: 0px 20px;
+  }
+
+  .line {
+    height: 4px;
+    background-color: black;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
 
   .tb-container {
     width: 80%;
@@ -33,14 +42,7 @@
     }
   }
 
-  .line {
-    height: 4px;
-    background-color: black;
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    transition: all 0.8s ease-out;
-  }
+
 
   .title {
     line-height: 1.2;
