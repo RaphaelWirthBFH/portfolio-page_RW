@@ -14,7 +14,7 @@
       opacity: 1;
     }
 
-    &.animate__fadeInLeft {
+    &.animate__bounceInLeft {
       transform: translateX(0);
       opacity: 1;
     }
@@ -23,7 +23,7 @@
       transform: translateX(0);
       opacity: 1;
     }
-
+    
     &.animate__fadeInUp {
       transform: translateY(0);
       opacity: 1;
