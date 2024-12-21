@@ -11,7 +11,7 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 100%;
+  overflow-y: auto; /* Ermöglicht Scrollen innerhalb des Components */
 }
 
 /* Falls Inhalte innerhalb einer Sektion begrenzt werden sollen */

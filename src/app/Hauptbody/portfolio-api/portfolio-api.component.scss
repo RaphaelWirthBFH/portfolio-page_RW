@@ -105,7 +105,8 @@
     .grid-item {
       width: 100%;
       max-width: 100%;
-      padding: 10px;
+      padding: 5px;
+      margin-bottom: 10px; /* Reduzierter Abstand */
     }
 
     .title {
@@ -113,7 +114,8 @@
     }
 
     .grid-title {
-      font-size: 1.2rem; /* Kleinere Schriftgröße für mittlere Displays */
+      font-size: 1rem; /* Kleinere Schriftgröße für mittlere Displays */
+      margin-bottom: 5px;
     }
 
     .location,
@@ -131,19 +133,28 @@
       max-width: 60%;
       max-height: 80px;
     }
+
+    .line {
+      margin-bottom: 15px; /* Geringerer Abstand */
+    }
   }
 
   @media (max-width: 480px) {
     .line {
       width: 90%;
+      margin-bottom: 10px; /* Noch geringerer Abstand */
     }
+
+    .grid-item {
+      margin-bottom: 8px; /* Weniger Abstand zwischen Containern */
+      }
 
     .title {
       font-size: 1.8rem;
     }
 
     .grid-title {
-      font-size: 1rem; /* Noch kleinere Schriftgröße für sehr kleine Displays */
+      font-size: 0.1rem; /* Noch kleinere Schriftgröße für sehr kleine Displays */
     }
 
     .location,
