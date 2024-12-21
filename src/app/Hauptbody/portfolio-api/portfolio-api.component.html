@@ -4,7 +4,7 @@
 
       <!-- Zentrierter Titel -->
       <div class="slide-in-element animate__animated" data-animation="animate__fadeInDown" fxLayout="row" fxLayoutAlign="center center">
-        <h2 class="title current-typo--h4">Hobby</h2>
+        <h2 class="title current-typo--h4" tabindex="0">Hobby</h2>
       </div>
 
       <!-- Zentrierte Linie -->
@@ -17,41 +17,41 @@
       <!-- 3 Quadratische Boxen nebeneinander -->
       <div class="grid-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
         <!-- Linker Container -->
-        <div class="grid-item slide-in-element" data-animation="animate__fadeInLeft">
-          <h3 class="grid-title">Schwimmen</h3>
+        <div class="grid-item slide-in-element" data-animation="animate__fadeInLeft" tabindex="0">
+          <h3 class="grid-title" tabindex="0">Aareschwimmen</h3>
           <div *ngIf="aareData; else loadingAare">
-            <p class="location">{{ aareData.name }}</p>
-            <p class="temperature">{{ aareData.aare }}°C</p>
+            <p class="location" tabindex="0">{{ aareData.name }}</p>
+            <p class="temperature" tabindex="0">{{ aareData.aare }}°C</p>
           </div>
           <ng-template #loadingAare>
-            <p>Daten werden geladen...</p>
+            <p tabindex="0">Daten werden geladen...</p>
           </ng-template>
         </div>
 
         <!-- Mittlerer Container -->
-        <div class="grid-item slide-in-element" data-animation="animate__fadeInUp">
-          <h3 class="grid-title">Dad Jokes erzählen</h3>
+        <div class="grid-item slide-in-element" data-animation="animate__fadeInUp" tabindex="0">
+          <h3 class="grid-title" tabindex="0">Dad Jokes erzählen</h3>
           <div *ngIf="dadJoke; else loadingJoke">
-            <p class="joke">{{ dadJoke }}</p>
+            <p class="joke" tabindex="0">{{ dadJoke }}</p>
           </div>
           <ng-template #loadingJoke>
-            <p>Witz wird geladen...</p>
+            <p tabindex="0">Witz wird geladen...</p>
           </ng-template>
-          <button class="joke-button" (click)="loadNewJoke()">Neuer Witz</button>
+          <button class="joke-button" (click)="loadNewJoke()" tabindex="0">Neuer Witz</button>
         </div>
 
         <!-- Rechter Container -->
-        <div class="grid-item slide-in-element" data-animation="animate__fadeInRight">
-          <h3 class="grid-title">Reisen</h3>
+        <div class="grid-item slide-in-element" data-animation="animate__fadeInRight" tabindex="0">
+          <h3 class="grid-title" tabindex="0">Reisen</h3>
           <div *ngIf="countryInfo; else loadingCountry">
-            <p><strong>Land:</strong> {{ countryInfo.name.common }}</p>
-            <p><strong>Hauptstadt:</strong> {{ countryInfo.capital[0] }}</p>
-            <p><strong>Region:</strong> {{ countryInfo.region }}</p>
-            <p><strong>Bevölkerung:</strong> {{ countryInfo.population | number }}</p>
-            <img [src]="countryInfo.flags.svg" alt="Flagge" class="flag">
+            <p tabindex="0"><strong>Land:</strong> {{ countryInfo.name.common }}</p>
+            <p tabindex="0"><strong>Hauptstadt:</strong> {{ countryInfo.capital[0] }}</p>
+            <p tabindex="0"><strong>Region:</strong> {{ countryInfo.region }}</p>
+            <p tabindex="0"><strong>Bevölkerung:</strong> {{ countryInfo.population | number }}</p>
+            <img [src]="countryInfo.flags.svg" alt="Flagge" class="flag" tabindex="0">
           </div>
           <ng-template #loadingCountry>
-            <p>{{ errorMessage ? errorMessage : 'Länderinformationen werden geladen...' }}</p>
+            <p tabindex="0">{{ errorMessage ? errorMessage : 'Länderinformationen werden geladen...' }}</p>
           </ng-template>
         </div>
       </div>

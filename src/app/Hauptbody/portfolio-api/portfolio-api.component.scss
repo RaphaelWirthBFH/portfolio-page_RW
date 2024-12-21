@@ -9,25 +9,21 @@
     transform: translateY(100%); /* Startzustand */
     transition: all 0.8s ease-out;
 
-    /* Links einfliegen */
     &.animate__fadeInLeft {
       opacity: 1;
       transform: translateX(0); /* Von links in die Ansicht */
     }
 
-    /* Unten einfliegen */
     &.animate__fadeInUp {
       opacity: 1;
       transform: translateY(0); /* Von unten in die Ansicht */
     }
 
-    /* Rechts einfliegen */
     &.animate__fadeInRight {
       opacity: 1;
       transform: translateX(0); /* Von rechts in die Ansicht */
     }
 
-    /* Standard-Animation */
     &.animate__fadeIn {
       opacity: 1;
       transform: translateY(0); /* Standardbewegung */
@@ -66,10 +62,9 @@
     text-align: center;
 
     .grid-title {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 10px;
-      text-decoration: underline;
     }
 
     .location,
@@ -118,7 +113,7 @@
     }
 
     .grid-title {
-      font-size: 1.2rem;
+      font-size: 1.2rem; /* Kleinere Schriftgröße für mittlere Displays */
     }
 
     .location,
@@ -148,7 +143,7 @@
     }
 
     .grid-title {
-      font-size: 0.8rem;
+      font-size: 1rem; /* Noch kleinere Schriftgröße für sehr kleine Displays */
     }
 
     .location,
